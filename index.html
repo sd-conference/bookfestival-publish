@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reading Books Festival</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400&display=swap" rel="stylesheet">
+    <style>
+    body {margin: 0; padding: 0;}
+    section {width: 100vw; height: 100vh; min-height: 400px; display: flex; justify-content: center; flex-direction: column; align-items: center;}
+    h1 {padding: 0; margin: 0; font-size: 5em; font-family: 'Roboto', sans-serif;}
+    .progress-bar {width: 100%; height: 3px; margin: 0; padding: 0; position: absolute; top: 0; background-color: black; transition: .5s ease;}
+    </style>
+</head>
+<body>
+    <section>
+        <div class="progress-bar" id="progress-bar"></div>
+        <h1><span style="font-weight: 100;">READING</span><br><span style="font-weight: 500">BOOKS</span><br><span style="font-weight: 600;">FESTIVAL</span></h1>
+
+    </section>
+<script>
+    function move () {
+      var elem = document.getElementById('progress-bar');
+      var width = 100;
+      var id = setInterval(frame, 750);
+      function frame () {
+        if (width <= 0) {
+          clearInterval(id);
+          window.location.href = 'https://drive.google.com/drive/folders/1VAC6Qqjc4gMvLKGUzquRDhHsEh1SDyvs?usp=sharing';
+        } else {
+          width -= 20;
+          elem.style.width = width + '%';
+        }
+      }
+    }
+
+    move()
+</script>
+</body>
+</html>
