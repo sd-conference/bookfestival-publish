@@ -5,31 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Reading Books Festival</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,400&display=swap" rel="stylesheet">
+    <link href="https://sd-conference.github.io/export/common.css" rel="stylesheet">
     <style>
-    body {margin: 0; padding: 0;}
-    section {width: 100vw; height: 100vh; min-height: 400px; display: flex; justify-content: center; flex-direction: column; align-items: center;}
-    h1 {padding: 0; margin: 0; font-size: 5em; font-family: 'Roboto', sans-serif;}
-    .progress-bar {width: 100%; height: 3px; margin: 0; padding: 0; position: absolute; top: 0; background-color: black; transition: .5s ease;}
+    .progress-bar {width: 0%; height: 3px; margin: 0; padding: 0; position: fixed; z-index: 10; top: 0; background-color: black; transition: .5s ease;}
     </style>
 </head>
 <body>
-    <section>
-        <div class="progress-bar" id="progress-bar"></div>
+    <div class="progress-bar" id="progress-bar"></div>
+    <div class="top">
+        <span class="logo">학술제</span>
+        <span class="child" id="forum" onclick="call('forum')">FORUM</span>
+        <span class="child now" id="ebl" onclick="call('ebl')">EBL</span>
+        <span class="child" id="books" onclick="call('books')">북페스티벌</span>
+        <span class="child" id="fcs" onclick="call('fcs')">꼬독/FCS</span>
+        <span class="fix" id="fix" onclick="call('fix')">FIX SDOK.GA</span>
+    </div>
+    <section class="hero">
         <h1><span style="font-weight: 100;">READING</span><br><span style="font-weight: 500">BOOKS</span><br><span style="font-weight: 600;">FESTIVAL</span></h1>
-
     </section>
 <script>
     function move () {
       var elem = document.getElementById('progress-bar');
-      var width = 100;
+      var width = 0;
       var id = setInterval(frame, 750);
       function frame () {
-        if (width <= 0) {
+        if (width >= 100) {
           clearInterval(id);
           window.location.href = 'https://drive.google.com/drive/folders/1VAC6Qqjc4gMvLKGUzquRDhHsEh1SDyvs?usp=sharing';
         } else {
-          width -= 20;
+          width += 20;
           elem.style.width = width + '%';
         }
       }
@@ -37,5 +43,6 @@
 
     move()
 </script>
+<script src="https://sd-conference.github.io/export/direction.js"></script>
 </body>
 </html>
